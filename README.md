@@ -38,10 +38,15 @@ The algorithm is implemented in Python and uses the following libraries:
 The notebook includes several utility functions that are used throughout the implementation of the NSGA-II algorithm. These functions are:
 
     generate_random_pop: This function generates a random population of solutions, where each solution is represented as an array of decision variables.
+    
     crowding_distance: This function calculates the crowding distance of a set of solutions, which is used as a measure of diversity in the population. The crowding distance is used to maintain diversity in the population as the algorithm progresses through generations.
+    
     sort_by_values: This function sorts a list of solutions based on the values of one of their objectives.
+    
     fast_non_dominated_sort: This function performs the non-dominated sorting step of the NSGA-II algorithm. It separates the solutions into different levels of non-domination and returns a list of indices for each level.
+    
     calculate_crowding_distance: This function calculates the crowding distance for each solution in a set.
+    
     crowded_comparison_operator: This function compares two solutions based on their crowding distance and their rank in the non-dominated sorting process.
 
 ## Main Program
@@ -49,11 +54,17 @@ The notebook includes several utility functions that are used throughout the imp
 The main program of the NSGAii notebook is divided into the following steps:
 
     Initialization: A random population of solutions is generated.
+    
     Non-dominated Sorting: The solutions are sorted into different levels of non-domination using the fast_non_dominated_sort function.
+    
     Crowding Distance Calculation: The crowding distance is calculated for each solution in the population using the calculate_crowding_distance function.
+    
     Parent Selection: Parents are selected for mating based on their crowding distance and their rank in the non-dominated sorting process, using the crowded_comparison_operator function.
+    
     Mating: The parents are mated to produce offspring, which are used to replace the least crowded solutions in the population.
+    
     Environmental Selection: The solutions from the previous generation and the new offspring are combined to form a new population, which is then used for the next iteration.
+    
     Termination: The algorithm terminates when a specified number of generations have been completed.
 
 ## Plotting the Results
